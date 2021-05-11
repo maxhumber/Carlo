@@ -40,7 +40,7 @@ typealias ConnectThreeMove = Int
 extension ConnectThreeMove: CarloGameMove {}
 ```
 
-The `CarloGame` protocol requires your game struct take the form:
+The `CarloGame` protocol requires that your game struct take the following form:
 
 ```swift
 public protocol CarloGame: Equatable {
@@ -55,7 +55,7 @@ public protocol CarloGame: Equatable {
 }
 ```
 
-Properly implemented it might look like this:
+Properly implemented your game might look like this:
 
 ```swift
 struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
@@ -124,7 +124,7 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
 }
 ```
 
-Once the game is defined, a `CarloTactician` can be instantiated with ease:
+Once the game is defined, a `CarloTactician` can be instantiated and used with ease:
 
 ```swift
 typealias Computer = CarloTactician<ConnectThreeGame>
