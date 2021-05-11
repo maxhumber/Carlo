@@ -134,7 +134,7 @@ game = game.update(7)
 game = game.update(2)
 /// 2020100000
 game = game.update(9)
-/// 2020100001 ... player 2 can win if move = 1
+/// 2020100001 ... player 2 can win if move => 1
 
 computer.uproot(to: game)
 for _ in 0..<50 {
@@ -142,7 +142,8 @@ for _ in 0..<50 {
 }
 
 let move = computer.bestMove!
-/// 2220100001 ... game over!
+game = game.update(move)
+/// 2220100001 ... game over
 ```
 
 The `.uproot` method updates the internal game state tracked by the "Tactician".
