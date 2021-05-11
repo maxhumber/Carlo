@@ -157,7 +157,7 @@ A few things to note:
 
 ### Installation
 
-Using [Swift Package Manager](https://swift.org/package-manager/) adding Carlo as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`:
+If you use [Swift Package Manager](https://swift.org/package-manager/) adding Carlo as a dependency is as easy as adding it to the `dependencies` of your `Package.swift`:
 
 ```swift
 dependencies: [
