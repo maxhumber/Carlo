@@ -5,7 +5,7 @@
 
 ### Carlo
 
-Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](GKMonteCarloStrategist) is clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
+Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](https://developer.apple.com/documentation/gameplaykit/gkmontecarlostrategist) is clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
 
 
 
