@@ -1,6 +1,7 @@
 <h3 align="center">
   <img src="https://raw.githubusercontent.com/maxhumber/Carlo/master/images/Carlo.png" height="300px" alt="Carlo">
 </h3>
+
 ### Carlo
 
 Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](GKMonteCarloStrategist) clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
