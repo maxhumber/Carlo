@@ -2,6 +2,7 @@
   <img src="https://raw.githubusercontent.com/maxhumber/Carlo/master/images/Carlo.png" height="300px" alt="Carlo">
 </h3>
 
+
 ### Carlo
 
 Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](GKMonteCarloStrategist) clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
@@ -154,9 +155,12 @@ And the `.bestMove` property will return the best move found (so far) by the sea
 
 
 
-### Installation (SPM)
+### Installation
 
+Using [Swift Package Manager](https://swift.org/package-manager/) adding Carlo as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/maxhumber/Carlo.git", from: "1.0")
+]
 ```
-
-```
-
