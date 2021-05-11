@@ -11,6 +11,12 @@ Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Wherea
 
 ### Usage
 
+To import Carlo in your swift file add this to the top:
+
+```swift
+import Carlo
+```
+
 To implement Carlo, your **player**, **move**, and **game** structs need to adhere to the `CarloGamePlayer`, `CarloGameMove`, and `CarloGame` protocols. The first two protocols are empty so they can literally be anything:
 
 ```swift
