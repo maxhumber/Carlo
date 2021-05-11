@@ -5,6 +5,7 @@
 
 import Foundation
 
+/// A Monte Carlo Tree Search Tactician
 public final class CarloTactician<Game: CarloGame> {
     /// The player for whom the Tactician will optimize
     public let player: Game.Player
@@ -14,13 +15,13 @@ public final class CarloTactician<Game: CarloGame> {
     
     /// The exploration versus exploitation tradeoff constant
     public let explorationConstant: Double
+    
+    /// The root of the search tree
     public var root: Node?
-    private var iterating = false
 
-    /// Initialization
     /// - Parameter player: Player for whom to optimize
-    /// - Parameter maxRolloutDepth: Defaults to *infinity*
-    /// - Parameter explorationConstant: Defaults to `sqrt(2)` (don't change unless you have a good reason)
+    /// - Parameter maxRolloutDepth: Set to small values if your game is really complex
+    /// - Parameter explorationConstant: Better not change unless you have a good reason...
     public init(for player: Game.Player, maxRolloutDepth: Int = .max, explorationConstant: Double = sqrt(2)) {
         self.player = player
         self.maxRolloutDepth = maxRolloutDepth

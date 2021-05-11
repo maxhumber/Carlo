@@ -18,13 +18,6 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
         self.array = Array.init(repeating: 0, count: length)
         self.currentPlayer = currentPlayer
     }
-    
-    var isFinished: Bool {
-        switch evaluate() {
-        case .ongoing: return false
-        default: return true
-        }
-    }
 
     func availableMoves() -> [Move] {
         array
