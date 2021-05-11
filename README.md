@@ -5,7 +5,7 @@
 
 ### Carlo
 
-Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](GKMonteCarloStrategist) clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
+Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](GKMonteCarloStrategist) is clunky, confusing, and old, Carlo is simple, easy to use, and highly flexible!
 
 
 
@@ -34,7 +34,7 @@ typealias ConnectThreeMove = Int
 extension ConnectThreeMove: CarloGameMove {}
 ```
 
-The `CarloGame` protocol builds on the above and requires that your game struct take the following form:
+The `CarloGame` protocol requires your game struct take the form:
 
 ```swift
 public protocol CarloGame: Equatable {
@@ -118,7 +118,7 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
 }
 ```
 
-With the game defined, a `CarloTactician` can be implemented with ease:
+Once the game is defined, a `CarloTactician` can be instantiated with ease:
 
 ```swift
 typealias Computer = CarloTactician<ConnectThreeGame>
@@ -147,11 +147,11 @@ game = game.update(move)
 /// 2220100001 ... game over
 ```
 
-The `.uproot` method updates the internal game state tracked by the "Tactician".
+A few things to note:
 
-The `.iterate` method performs one search in the Tactician's tree" (and should consequently be used in conjunction with a `for`/`while` loop as more iterations will lead to better moves)
-
-And the `.bestMove` property will return the best move found (so far) by the search algorithm
+- The `.uproot` method updates the internal game state tracked by the "Tactician"
+- The `.iterate` method performs one search in the Tactician's "tree" (and should consequently be used in conjunction with a `for`/`while` loop as more iterations will lead to better moves)
+- And the `.bestMove` property will return the best move (so far) found by the search algorithm
 
 
 
