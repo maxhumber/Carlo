@@ -167,6 +167,6 @@ If you use [Swift Package Manager](https://swift.org/package-manager/) adding Ca
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/maxhumber/Carlo.git", from: "1.0")
+    .package(url: "https://github.com/maxhumber/Carlo.git", from: "1.0.1")
 ]
 ```
