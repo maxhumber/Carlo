@@ -82,6 +82,11 @@ public final class CarloTactician<Game: CarloGame> {
     public func backup(value: Double, through node: Node) {
         node.backpropagate(value)
     }
+    
+    /// Reset root to nil in preparation for a new game
+    public func reset() {
+        root = nil
+    }
         
     private func findNode(in tree: Node, holding game: Game) -> Node? {
         var queue = [tree]

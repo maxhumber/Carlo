@@ -47,7 +47,7 @@ extension CarloGame {
     /// Flag for whether the game has reached a terminal state
     ///
     /// - returns: `false` if `evaluate()` is `.ongoing(_)`, otherwise `true`
-    var isFinished: Bool {
+    public var isFinished: Bool {
         switch evaluate() {
         case .ongoing: return false
         default: return true
