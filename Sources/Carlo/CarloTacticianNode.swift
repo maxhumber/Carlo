@@ -88,11 +88,11 @@ extension CarloTactician {
         }
         
         /// Backpropagate the rollout value through the entire branch of the tree
-        public func backpropagate(_ value: Double) {
-            visits += 1
+        public func backpropagate(_ value: Double, visits n: Double = 1) {
             cumulativeValue += value
+            visits += n
             if let parent = parent {
-                parent.backpropagate(value)
+                parent.backpropagate(value, visits: n)
             }
         }
         

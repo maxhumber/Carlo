@@ -53,7 +53,7 @@ public final class CarloTactician<Game: CarloGame> {
     public func iterate() {
         if let leaf = select() {
             let value = rollout(leaf)
-            backup(value: value, through: leaf)
+            backup(value, through: leaf)
         }
     }
     
@@ -78,12 +78,12 @@ public final class CarloTactician<Game: CarloGame> {
         return game.evaluate(for: player).value
     }
     
-    /// Backup the rolled-out value through the entire branch of the tree
-    public func backup(value: Double, through node: Node) {
-        node.backpropagate(value)
+    /// Backup the rolledout value for the entire branch of the tree
+    public func backup(_ value: Double, visits n: Double = 1, through node: Node) {
+        node.backpropagate(value, visits: n)
     }
     
-    /// Reset root to nil in preparation for a new game
+    /// Set root to nil for a new game
     public func reset() {
         root = nil
     }
