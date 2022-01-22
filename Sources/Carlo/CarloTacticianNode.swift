@@ -92,7 +92,8 @@ extension CarloTactician {
             cumulativeValue += value
             visits += n
             if let parent = parent {
-                parent.backpropagate(value, visits: n)
+                assert(game.currentPlayer != parent.game.currentPlayer, "`currentPlayer` needs to change with every move")
+                parent.backpropagate(1 - value, visits: n)
             }
         }
         
