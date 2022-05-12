@@ -37,7 +37,7 @@ extension CarloSolver {
         
         func expand() -> Node {
             let move = unexpandedMoves.popLast()!
-            let game = game.updated(move)
+            let game = game.after(move)
             let child = Node(game, previous: move, parent: self)
             children.append(child)
             return child

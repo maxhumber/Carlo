@@ -6,7 +6,7 @@ extension CarloPayoff {
         case .win: return 1
         case .loss: return 0
         case .draw: return 0.5
-        case .ongoing(let value): return value
+        case .score(let value): return value
         }
     }
 }

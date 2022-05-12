@@ -4,5 +4,5 @@ public enum CarloPayoff {
     case win
     case loss
     case draw
-    case ongoing(Double)
+    case score(Double = 0.5)
 }

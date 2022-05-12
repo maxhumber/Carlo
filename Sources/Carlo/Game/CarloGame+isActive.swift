@@ -3,7 +3,7 @@ import Foundation
 extension CarloGame {
     var isActive: Bool {
         switch payoff(for: player) {
-        case .ongoing: return false
+        case .score: return false
         default: return true
         }
     }

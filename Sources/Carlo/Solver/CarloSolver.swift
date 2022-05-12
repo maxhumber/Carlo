@@ -48,7 +48,7 @@ public final class CarloSolver<Game: CarloGame> {
         var game = node.game
         while game.isActive && depth < maxRolloutDepth {
             guard let move = game.randomMove() else { break }
-            game = game.updated(move)
+            game = game.after(move)
             depth += 1
         }
         let payoff = game.payoff(for: player)

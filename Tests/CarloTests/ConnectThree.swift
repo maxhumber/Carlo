@@ -18,7 +18,7 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
             .compactMap { $0.element == 0 ? Move($0.offset) : nil}
     }
     
-    func updated(_ move: Move) -> Self {
+    func after(_ move: Move) -> Self {
         var copy = self
         copy.array[move] = player.rawValue
         copy.player = player.opposite
@@ -34,7 +34,7 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
         case (true, false, _): return .win
         case (false, true, _): return .loss
         case (false, false, false): return .draw
-        default: return .ongoing(0.5)
+        default: return .score(0.5)
         }
     }
     
