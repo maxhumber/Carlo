@@ -1,12 +1,11 @@
 <h3 align="center">
-  <img src="https://raw.githubusercontent.com/maxhumber/Carlo/master/images/Carlo.png" height="300px" alt="Carlo">
+  <img src="https://raw.githubusercontent.com/maxhumber/Carlo/master/Images/Carlo.png" height="200px" alt="Carlo">
 </h3>
 
 
-### Carlo
+### About
 
-Carlo is a *Monte Carlo Tree Search* (MCTS) library for turn-based games. Whereas [GKMonteCarloStrategist](https://developer.apple.com/documentation/gameplaykit/gkmontecarlostrategist) is clunky and confusing, Carlo is simple and easy to use!
-
+A *Monte Carlo Tree Search* (MCTS) library for turn-based games built with Swift
 
 
 ### Import
@@ -16,7 +15,6 @@ Import Carlo by adding the following line to any `.swift` file:
 ```swift
 import Carlo
 ```
-
 
 
 ### Implement
@@ -130,7 +128,6 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
 ```
 
 
-
 ### Use
 
 Use Carlo by scaffolding a `CarloTactician` on a `CarloGame`:
@@ -170,7 +167,6 @@ let move = computer.bestMove!
 game = game.update(move)
 /// 2220100001 ... game over
 ```
-
 
 
 ### Install
