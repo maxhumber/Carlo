@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by max on 2021-05-11.
-//
-
 import Carlo
 
 struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
@@ -12,11 +5,11 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
     typealias Move = ConnectThreeMove
 
     var array: Array<Int>
-    var currentPlayer: Player
+    var player: Player
     
-    init(length: Int = 10, currentPlayer: Player = .one) {
+    init(length: Int = 10, startingPlayer: Player = .one) {
         self.array = Array.init(repeating: 0, count: length)
-        self.currentPlayer = currentPlayer
+        self.player = startingPlayer
     }
 
     func availableMoves() -> [Move] {
@@ -25,14 +18,14 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
             .compactMap { $0.element == 0 ? Move($0.offset) : nil}
     }
     
-    func update(_ move: Move) -> Self {
+    func updated(_ move: Move) -> Self {
         var copy = self
-        copy.array[move] = currentPlayer.rawValue
-        copy.currentPlayer = currentPlayer.opposite
+        copy.array[move] = player.rawValue
+        copy.player = player.opposite
         return copy
     }
     
-    func evaluate(for player: Player) -> Evaluation {
+    func payoff(for player: Player) -> CarloPayoff {
         let player3 = three(for: player)
         let oppo3 = three(for: player.opposite)
         let remaining0 = array.contains(0)
@@ -67,7 +60,7 @@ struct ConnectThreeGame: CarloGame, CustomStringConvertible, Equatable {
     }
 }
 
-enum ConnectThreePlayer: Int, CarloGamePlayer, CustomStringConvertible {
+enum ConnectThreePlayer: Int, CustomStringConvertible {
     case one = 1
     case two = 2
     
@@ -84,4 +77,3 @@ enum ConnectThreePlayer: Int, CarloGamePlayer, CustomStringConvertible {
 }
 
 typealias ConnectThreeMove = Int
-extension ConnectThreeMove: CarloGameMove {}
