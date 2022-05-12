@@ -3,8 +3,8 @@ import Foundation
 public protocol CarloGame: Equatable {
     associatedtype Move
     associatedtype Player: Equatable
-    var player: Player { get } // switch after move
+    var awaiting: Player? { get }
     func availableMoves() -> [Move]
-    func after(_ move: Move) -> Self
-    func payoff(for player: Player) -> CarloPayoff
+    func after(_ move: Move) throws -> Self
+    func evaluate(for player: Player) -> CarloPayoff
 }

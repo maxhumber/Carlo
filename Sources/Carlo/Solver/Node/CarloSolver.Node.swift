@@ -37,7 +37,7 @@ extension CarloSolver {
         
         func expand() -> Node {
             let move = unexpandedMoves.popLast()!
-            let game = game.after(move)
+            let game = try! game.after(move)
             let child = Node(game, previous: move, parent: self)
             children.append(child)
             return child
@@ -47,7 +47,7 @@ extension CarloSolver {
             cumulativeValue += value
             visits += n
             if let parent = parent {
-                assert(game.player != parent.game.player, "`currentPlayer` needs to change with every move")
+                assert(game.awaiting != parent.game.awaiting, "`currentPlayer` needs to change with every move")
                 parent.backpropagate(1 - value, visits: n)
             }
         }

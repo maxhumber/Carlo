@@ -12,11 +12,7 @@
 		506B7390282D4D0000EE62B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506B738F282D4D0000EE62B5 /* Assets.xcassets */; };
 		506B7393282D4D0000EE62B5 /* Preview.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506B7392282D4D0000EE62B5 /* Preview.xcassets */; };
 		506B739D282D4D0000EE62B5 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B739C282D4D0000EE62B5 /* TicTacToeTests.swift */; };
-		506B73BD282D4D9300EE62B5 /* TicTacToeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B73BC282D4D9300EE62B5 /* TicTacToeGame.swift */; };
 		506B73C1282D4E0E00EE62B5 /* Carlo in Frameworks */ = {isa = PBXBuildFile; productRef = 506B73C0282D4E0E00EE62B5 /* Carlo */; };
-		506B73C3282D527100EE62B5 /* TicTacToePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B73C2282D527100EE62B5 /* TicTacToePlayer.swift */; };
-		506B73C7282D5CC100EE62B5 /* TicTacToeGame+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B73C6282D5CC100EE62B5 /* TicTacToeGame+CustomStringConvertible.swift */; };
-		506B73C9282D61C900EE62B5 /* TicTacToePlayer+opponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B73C8282D61C900EE62B5 /* TicTacToePlayer+opponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +33,7 @@
 		506B7392282D4D0000EE62B5 /* Preview.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Preview.xcassets; sourceTree = "<group>"; };
 		506B7398282D4D0000EE62B5 /* TicTacToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		506B739C282D4D0000EE62B5 /* TicTacToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeTests.swift; sourceTree = "<group>"; };
-		506B73BC282D4D9300EE62B5 /* TicTacToeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGame.swift; sourceTree = "<group>"; };
-		506B73BE282D4E0400EE62B5 /* Carlo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Carlo; path = ../../../..; sourceTree = "<group>"; };
-		506B73C2282D527100EE62B5 /* TicTacToePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToePlayer.swift; sourceTree = "<group>"; };
-		506B73C6282D5CC100EE62B5 /* TicTacToeGame+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TicTacToeGame+CustomStringConvertible.swift"; sourceTree = "<group>"; };
-		506B73C8282D61C900EE62B5 /* TicTacToePlayer+opponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TicTacToePlayer+opponent.swift"; sourceTree = "<group>"; };
+		50D82880282D7A06008004DC /* Carlo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Carlo; path = ../../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +104,7 @@
 		506B73B5282D4D0E00EE62B5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				506B73BE282D4E0400EE62B5 /* Carlo */,
-				506B73C4282D5CAA00EE62B5 /* Game */,
-				506B73C5282D5CB100EE62B5 /* Player */,
+				50D82880282D7A06008004DC /* Carlo */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -149,24 +139,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		506B73C4282D5CAA00EE62B5 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				506B73BC282D4D9300EE62B5 /* TicTacToeGame.swift */,
-				506B73C6282D5CC100EE62B5 /* TicTacToeGame+CustomStringConvertible.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		506B73C5282D5CB100EE62B5 /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				506B73C2282D527100EE62B5 /* TicTacToePlayer.swift */,
-				506B73C8282D61C900EE62B5 /* TicTacToePlayer+opponent.swift */,
-			);
-			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +244,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				506B73C9282D61C900EE62B5 /* TicTacToePlayer+opponent.swift in Sources */,
-				506B73C7282D5CC100EE62B5 /* TicTacToeGame+CustomStringConvertible.swift in Sources */,
-				506B73BD282D4D9300EE62B5 /* TicTacToeGame.swift in Sources */,
-				506B73C3282D527100EE62B5 /* TicTacToePlayer.swift in Sources */,
 				506B738E282D4CFF00EE62B5 /* ContentView.swift in Sources */,
 				506B738C282D4CFF00EE62B5 /* TicTacToeApp.swift in Sources */,
 			);
