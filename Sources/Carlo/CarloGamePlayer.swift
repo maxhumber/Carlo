@@ -14,4 +14,4 @@ import Foundation
 ///     case white
 /// }
 /// ```
-public protocol CarloGamePlayer {}
+public protocol CarloGamePlayer: Equatable {}
