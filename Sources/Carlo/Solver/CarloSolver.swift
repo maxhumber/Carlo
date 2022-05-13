@@ -19,7 +19,7 @@ public final class CarloSolver<Game: CarloGame> {
         if let tree = root, let newRoot = findNode(in: tree, holding: game) {
             root = newRoot
         } else {
-            root = Node(game)
+            root = Node(game: game)
         }
     }
     
@@ -46,7 +46,8 @@ public final class CarloSolver<Game: CarloGame> {
     func rollout(_ node: Node) -> Double {
         var depth = 0
         var game = node.game
-        while game.isActive && depth < maxRolloutDepth {
+        let isTerminal = node.isTerminal
+        while !isTerminal && depth < maxRolloutDepth {
             guard let move = game.randomMove() else { break }
             game = try! game.after(move)
             depth += 1

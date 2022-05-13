@@ -1,6 +1,6 @@
 import Foundation
 
-public enum CarloPayoff {
+public enum CarloPayoff: Equatable {
     case win
     case loss
     case draw

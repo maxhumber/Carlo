@@ -6,23 +6,25 @@ extension CarloSolver {
         var children = [Node]()
         let move: Game.Move?
         let game: Game
-        let isTerminal: Bool
         var unexpandedMoves: [Game.Move]
         var cumulativeValue: Double = 0.0
         var visits: Int = 0
 
-        init(_ game: Game, previous move: Game.Move? = nil, parent: Node? = nil) {
+        init(parent: Node? = nil, previous move: Game.Move? = nil, game: Game) {
             self.parent = parent
             self.move = move
             self.game = game
-            self.isTerminal = !game.isActive
             self.unexpandedMoves = game.availableMoves()
+        }
+        
+        var isTerminal: Bool {
+            !game.isInProgress()
         }
         
         var isFullyExpanded: Bool {
             unexpandedMoves.isEmpty
         }
-    
+            
         func select(_ c: Double) -> Node {
             var leafNode = self
             while !leafNode.isTerminal {
@@ -38,7 +40,7 @@ extension CarloSolver {
         func expand() -> Node {
             let move = unexpandedMoves.popLast()!
             let game = try! game.after(move)
-            let child = Node(game, previous: move, parent: self)
+            let child = Node(parent: self, previous: move, game: game)
             children.append(child)
             return child
         }
