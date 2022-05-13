@@ -1,6 +1,7 @@
+import Carlo
 import Foundation
 
-public struct TicTacToe: CarloGame {
+public struct TicTacToe: CarloGame, Equatable {
     public typealias Player = TicTacToePlayer
     public typealias Move = Int
     

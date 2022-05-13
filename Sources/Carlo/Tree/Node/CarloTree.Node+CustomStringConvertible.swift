@@ -1,8 +1,8 @@
 import Foundation
 
-extension CarloTreeSearcher.Node: CustomStringConvertible {
+extension CarloTree.Node: CustomStringConvertible {
     var description: String {
-        var str = awaitingExpansion ? "◻︎ " : "☑︎ "
+        var str = isLeaf ? "◻︎ " : "☑︎ "
         if let move = move {
             str += "\(move)"
         } else {

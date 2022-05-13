@@ -1,6 +1,6 @@
 import Foundation
 
-public final class CarloTreeSearcher<Game: CarloGame> {
+public final class CarloTree<Game: CarloGame> {
     public typealias Player = Game.Player
     public typealias Move = Game.Move
 
@@ -16,12 +16,12 @@ public final class CarloTreeSearcher<Game: CarloGame> {
     }
     
     func search() {
-        let leaf = root.randomSelect()
+        let leaf = root.selectLeaf()
         try! leaf.expand()
-        let newLeaf = leaf.children.randomElement()
-        let game = newLeaf.randomPlayout(maxTurns: maxPlayoutTurns)
-        let payoff = game?.evaluate(for: player)
-        let value = payoff?.value
-        newLeaf?.backpropagate(value: value)
+        let child = leaf.randomChild()! // << hmmm
+        let game = child.randomPlayout(maxTurns: maxPlayoutTurns)
+        let payoff = game.evaluate(for: player)
+        let value = payoff.value
+        child.backpropagate(value: value)
     }
 }

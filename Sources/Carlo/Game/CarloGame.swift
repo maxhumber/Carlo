@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol CarloGame: Equatable {
+public protocol CarloGame {
     associatedtype Player
     associatedtype Move
     var awaiting: Player { get }

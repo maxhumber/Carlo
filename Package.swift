@@ -1,14 +1,16 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.6
 import PackageDescription
 
 let package = Package(
     name: "Carlo",
     products: [
-        .library(name: "Carlo", targets: ["Carlo"])
+        .library(name: "Carlo", targets: ["Carlo", "TicTacToe"])
     ],
     dependencies: [],
     targets: [
         .target(name: "Carlo", dependencies: []),
-        .testTarget(name: "CarloTests", dependencies: ["Carlo"])
+        .target(name: "TicTacToe", dependencies: ["Carlo"]),
+        .testTarget(name: "CarloTests", dependencies: ["Carlo", "TicTacToe"]),
+        .testTarget(name: "TicTacToeTests", dependencies: ["TicTacToe"]),
     ]
 )

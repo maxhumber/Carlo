@@ -1,9 +1,10 @@
 import XCTest
 @testable import Carlo
+@testable import TicTacToe
 
 class CarloSolverTests: XCTestCase {
     typealias Game = TicTacToe
-    typealias Solver = CarloTreeSearcher<Game>
+    typealias Solver = CarloTree<Game>
     typealias Node = Solver.Node
 
     var game: Game!

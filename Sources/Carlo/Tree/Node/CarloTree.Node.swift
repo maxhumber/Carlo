@@ -1,6 +1,6 @@
 import Foundation
 
-extension CarloTreeSearcher {
+extension CarloTree {
     final class Node {
         weak var parent: Node?
         let game: Game
@@ -8,7 +8,7 @@ extension CarloTreeSearcher {
         var visits: Int
         var totalValue: Double
         var children: [Node]
-        var awaitingExpansion: Bool
+        var isLeaf: Bool
 
         init(parent: Node? = nil, game: Game, previous move: Move? = nil) {
             self.parent = parent
@@ -17,24 +17,25 @@ extension CarloTreeSearcher {
             self.visits = 0
             self.totalValue = 0
             self.children = []
-            self.awaitingExpansion = true
+            self.isLeaf = true
+        }
+        
+        func randomChild() -> Node? {
+            children.randomElement()
         }
         
         func selectLeaf() -> Node {
             var node = self
-            while !node.awaitingExpansion {
-                if let child = node.children.randomElement() {
-                    node = child
-                } else {
-                    break
-                }
+            while !node.isLeaf {
+                guard let child = node.children.randomElement() else { break }
+                node = child
             }
             return node
         }
         
         func expand() throws {
-            defer { awaitingExpansion = false }
-            guard awaitingExpansion else { throw CarloError.alreadyExpanded }
+            defer { isLeaf = false }
+            guard isLeaf else { throw CarloError.alreadyExpanded }
             guard game.isInProgress() else { return }
             for move in game.availableMoves() {
                 let gamePlus = try! game.after(move)
