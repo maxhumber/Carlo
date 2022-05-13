@@ -1,7 +1,7 @@
 import Foundation
 
-public struct CarloTicTacToe: CarloGame {
-    public typealias Player = CarloTicTacToePlayer
+public struct TicTacToe: CarloGame {
+    public typealias Player = TicTacToePlayer
     public typealias Move = Int
     
     public var awaiting: Player
@@ -12,7 +12,7 @@ public struct CarloTicTacToe: CarloGame {
     }
 
     public func availableMoves() -> [Move] {
-        board.indices.filter({ board[$0] == nil })
+        board.indices.filter { board[$0] == nil }
     }
     
     public func after(_ move: Move) throws -> Self {

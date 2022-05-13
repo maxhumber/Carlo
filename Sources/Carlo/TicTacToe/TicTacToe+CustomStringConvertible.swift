@@ -1,6 +1,6 @@
 import Foundation
 
-extension CarloTicTacToe: CustomStringConvertible {
+extension TicTacToe: CustomStringConvertible {
     public var description: String {
         var strings = board.map { $0?.rawValue ?? "*" }
         strings.insert("\n", at: 6)
